@@ -1,14 +1,23 @@
 body {
+   
     background-color: teal;
-    display: flexbox;
+    font-family: sans-serif;
     justify-content: center;
-   align-items:center;
+    align-items:center;
   }
 
 h1 {
     text-align:center;
     color: navy;
     margin-left: 20px;
+    font-style: normal;
+
+  }
+  h3 {
+    text-align:center;
+    color: navy;
+    margin-left: 20px;
+    font-style: normal;
 
   }
 
@@ -17,33 +26,33 @@ h1 {
     border: ridge;
     padding: 15px 32px;
     text-align: center;
-    text-decoration: none;
     display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-   
+    float:
   }
  
 
 .game-grid {
-    display: flexbox;
+    display: flex;
+    justify-content: center;
     flex-flow: center;
-    position: fixed;
     display: grid;
-    border-radius: 25px;
     grid-template-rows: 200px 200px 200px;
     grid-template-columns: 200px 200px 200px;
 }
 
 .cell {
+position:center;
   background:blue;
   border: 1px solid #555;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #AAA;
-
+  color: white;
+  border-radius:10px;
+  font-size: 1000%;
 }
 .cell:hover{
     background-color: grey;
