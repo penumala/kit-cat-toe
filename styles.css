@@ -22,16 +22,20 @@ h1 {
   }
 
   button{
+    position: relative;
+   left:600px;
+    align-items: center;
     background-color: white;
     border: ridge;
     padding: 15px 32px;
     text-align: center;
     display: inline-block;
-    font-size: 16px;
+    font-size: 25px;
     margin: 4px 2px;
     cursor: pointer;
-    float:
+    size: 0vmax;
   }
+  
  
 
 .game-grid {
@@ -41,6 +45,7 @@ h1 {
     display: grid;
     grid-template-rows: 200px 200px 200px;
     grid-template-columns: 200px 200px 200px;
+  
 }
 
 .cell {
@@ -52,7 +57,7 @@ position:center;
   justify-content: center;
   color: white;
   border-radius:10px;
-  font-size: 1000%;
+  font-size: 900%;
 }
 .cell:hover{
     background-color: grey;
