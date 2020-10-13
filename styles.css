@@ -8,14 +8,14 @@ body {
 
 h1 {
     text-align:center;
-    color: navy;
+    color:white;
     margin-left: 20px;
     font-style: normal;
 
   }
   h3 {
     text-align:center;
-    color: navy;
+    color:white;
     margin-left: 20px;
     font-style: normal;
 
@@ -52,6 +52,7 @@ h1 {
 position:center;
   background:blue;
   border: 1px solid #555;
+  border-color: white;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -4,7 +4,6 @@ const reset = document.querySelector('button');
 const boxs = document.querySelectorAll('.cell');
 const inputs = document.querySelectorAll('#game-grid');
 const playerDisplay = document.querySelector('.player');
-let gameIsLive = true;
 const manageClicks= [];
 let winner = false;
 const winCombos = [
@@ -27,14 +26,19 @@ const player2TurnMessage = " Player2's turn"
 
 const enableListeners = () => Array.from(document.querySelectorAll('.cell'));
 const handleReset = (e) => {
-    console.log(e);
 }
 
 reset.addEventListener('click', () => {     
 inputs.forEach(input => input.value = '');
-   
+    
 })
-function myButton(){
+
+    function newButton(){
+    document.getElementById('player1').innerHTML = 'Player X Go First!';
+
+}
+
+    function resetButton(){
     location.reload();
 }
     let counter = 0;
@@ -49,9 +53,8 @@ function myButton(){
             manageClicks.push(index);
     
             playerX.push(index)
-            console.log(playerX)
-           console.log(player1TurnMessage);
-           {document.getElementById('player1').innerHTML = 'Player 2 Turn';
+           
+           {document.getElementById('player1').innerHTML = 'Player O Turn';
         }
          }else{
             box.innerHTML = 'o'
@@ -59,115 +62,146 @@ function myButton(){
             playerO.push(index)
             console.log("playero" + playerO)
             console.log(player2TurnMessage);
-            {document.getElementById('player1').innerHTML = 'Player 1 Turn';
+            {document.getElementById('player1').innerHTML = 'Player X Turn';
         }
          }
 
-         function myFunction() {
-            document.getElementById("myForm").reset();
-          }
          winCombo();
         
          counter++;
-       
-     }
+      
+         if (counter === 9 ){
+             if (winner){
+             
+             }else {
+                console.log("Draw")
+                document.getElementById('player1').innerHTML = "It's a Draw !";
+             
+             
+        }
+         }
+        
+         
+         }
+        
+         
     
     })
 
 })
+
 //==========================Horizontal===============
    function winCombo(){
     if (playerX.includes(winCombos[0][0])&&playerX.includes(winCombos[0][1])&&playerX.includes(winCombos[0][2])){
-       
-       alert("Player 1 Wins")
-        myButton();
-        {document.getElementById('player1').innerHTML = 'Player 1 Wins!';
-        }
-       
-    
-
-        /*
-        {document.getElementById('player1').innerHTML = 'Player 1 Wins!';
-        document.getElementById('player1').style.display = 'block';
-        boxs = document.querySelectorAll('.cell');
-        }*/
-
+        winner = true
+        //alert("Player X Wins")
+      
+        {document.getElementById('player1').innerHTML = 'Player X Wins!';
+        }  
+        //resetButton();
     }else if (playerO.includes(winCombos[0][0])&&playerO.includes(winCombos[0][1])&&playerO.includes(winCombos[0][2])){
-       
-        {document.getElementById('player1').innerHTML = 'Player 2 Wins!';
+        winner = true
+        //alert("Player O Wins")
+   
+        {document.getElementById('player1').innerHTML = 'Player O Wins!';
         }
+        resetButton();
 
     } else if (playerX.includes(winCombos[1][0])&&playerX.includes(winCombos[1][1])&&playerX.includes(winCombos[1][2])){
-        {document.getElementById('player1').innerHTML = 'Player 1 Wins!';
+        winner = true
+        alert("Player X wins")
+        resetButton();
+        {document.getElementById('player1').innerHTML = 'Player X wins!';
     }
     }else if (playerO.includes(winCombos[1][0])&&playerO.includes(winCombos[1][1])&&playerO.includes(winCombos[1][2])){
-        {document.getElementById('player1').innerHTML = 'Player 2 Wins!';
+        winner = true
+        alert("Player O Wins")
+        resetButton();
+        {document.getElementById('player1').innerHTML = 'Player O Wins!';
         }
     } else if (playerX.includes(winCombos[2][0])&&playerX.includes(winCombos[2][1])&&playerX.includes(winCombos[2][2])){
-        {document.getElementById('player1').innerHTML = 'Player 1 Wins!';
+        winner = true
+        alert("Player X wins")
+        resetButton();
+        {document.getElementById('player1').innerHTML = 'Player X wins!';
     }
 
     }else if (playerO.includes(winCombos[2][0])&&playerO.includes(winCombos[2][1])&&playerO.includes(winCombos[2][2])){
+        winner = true
+        alert("Player 2 Wins")
+        resetButton();
         {document.getElementById('player1').innerHTML = 'Player 2 Wins!';
     }
         //===========================Vertical========
     } else if (playerX.includes(winCombos[3][0])&&playerX.includes(winCombos[3][1])&&playerX.includes(winCombos[3][2])){
-        {document.getElementById('player1').innerHTML = 'Player 1 Wins!';
+        winner = true
+        alert("Player X wins")
+        resetButton();
+        {document.getElementById('player1').innerHTML = 'Player X wins!';
     }
 
     } else if (playerO.includes(winCombos[3][0])&&playerO.includes(winCombos[3][1])&&playerO.includes(winCombos[3][2])){
+        winner = true
+        alert("Player 2 Wins")
+        resetButton();
         {document.getElementById('player1').innerHTML = 'Player 2 Wins!';
     } 
 
     } else if (playerX.includes(winCombos[4][0])&&playerX.includes(winCombos[4][1])&&playerX.includes(winCombos[4][2])){
-        {document.getElementById('player1').innerHTML = 'Player 1 Wins!';
+        winner = true
+        alert("Player X wins")
+        //resetButton();
+        {document.getElementById('player1').innerHTML = 'Player X wins!';
     }
 
     } else if (playerO.includes(winCombos[4][0])&&playerO.includes(winCombos[4][1])&&playerO.includes(winCombos[4][2])){
-        {document.getElementById('player1').innerHTML = 'Player 2 Wins!';
+        winner = true
+        alert("Player O Wins")
+        {document.getElementById('player1').innerHTML = 'Player O Wins!';
     }
     } else if (playerX.includes(winCombos[5][0])&&playerX.includes(winCombos[5][1])&&playerX.includes(winCombos[5][2])){
-        {document.getElementById('player1').innerHTML = 'Player 1 Wins!';
+        winner = true
+        alert("Player X wins")
+        resetButton();
+        {document.getElementById('player1').innerHTML = 'Player X wins!';
     }
 
     } else if (playerO.includes(winCombos[5][0])&&playerO.includes(winCombos[5][1])&&playerO.includes(winCombos[5][2])){
+        winner = true
+        alert("Player 2 Wins")
+        resetButton();
         {document.getElementById('player1').innerHTML = 'Player 2 Wins!';
     }
         //===============================Diagonal========
 
     } else if (playerX.includes(winCombos[6][0])&&playerX.includes(winCombos[6][1])&&playerX.includes(winCombos[6][2])){
-        {document.getElementById('player1').innerHTML = 'Player 1 Wins!';
+        winner = true
+        alert("Player X wins")
+        resetButton();
+        {document.getElementById('player1').innerHTML = 'Player X wins!';
     }
 
     } else if (playerO.includes(winCombos[6][0])&&playerO.includes(winCombos[6][1])&&playerO.includes(winCombos[6][2])){
+        winner = true
+        alert("Player 2 Wins")
         {document.getElementById('player1').innerHTML = 'Player 2 Wins!';
     }
+    resetButton();
 
     } else if (playerX.includes(winCombos[7][0])&&playerX.includes(winCombos[7][1])&&playerX.includes(winCombos[7][2])){
-       
-        {document.getElementById('player1').innerHTML = 'Player 1 Wins!';
+        winner = true
+        alert("Player X wins")
+        resetButton();
+        {document.getElementById('player1').innerHTML = 'Player X wins!';
     }
 
     } else if (playerO.includes(winCombos[7][0])&&playerO.includes(winCombos[7][1])&&playerO.includes(winCombos[7][2])){
+        winner = true
+        alert("Player 2 Wins")
+        resetButton();
         {document.getElementById('player1').innerHTML = 'Player 2 Wins!';
     }
 
+    }    
+
     }
-
-
-    
-
-    
-
-
-function draw(){
-
-}
-
-function resetGame(){
-reset = document.querySelector('.game-buttons');
-while(boxs.firstChild){
-    boxs.removeChild(div.firstChild);
-}
-}
-   }
