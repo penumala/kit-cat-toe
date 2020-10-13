@@ -13,7 +13,7 @@ h1 {
     font-style: normal;
 
   }
-  h3 {
+  h2 {
     text-align:center;
     color:white;
     margin-left: 20px;
@@ -23,7 +23,8 @@ h1 {
 
   button{
     position: relative;
-   left:600px;
+    left:600px;
+    color: tomato;
     align-items: center;
     background-color: white;
     border: ridge;
@@ -49,11 +50,11 @@ h1 {
 }
 
 .cell {
-position:center;
+  display: flex;
+ position:center;
   background:blue;
   border: 1px solid #555;
   border-color: white;
-  display: flex;
   align-items: center;
   justify-content: center;
   color: white;
